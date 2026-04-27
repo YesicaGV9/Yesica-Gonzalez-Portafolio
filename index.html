@@ -1,37 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-    crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>YesicaGonzalezPortafolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>YesicaGonzalezPortafolio</title>
 </head>
+
 <body>
-<div class="navbar-envoltura">
- <nav>
-    <a href="#" class="logo">
-      <div class="logo-ring"></div>
-      <span class="logo-texto">YesicaG</span>
-    </a>
 
-    <ul class="nav-links">
-      <li><a href="#">Hogar</a></li>
-      <li><a href="#">Sobre mi</a></li>
-      <li><a href="#">Educación</a></li>
-      <li><a href="#">Proyectos</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#" class="nav-cta">Hablemos</a></li>
-    </ul>
+
+  <div id="bienvenidaScreen" class="pantalla-entrada" role="status" aria-live="polite">
+
+    <div class="animacionHola">
+      <h1>
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+        <span>!</span>
+      </h1>
+
+      <div><small class="bienvenidos">Bienvenidos</small></div>
+
+
+    </div>
+  </div>
+
+
+
+
+  <nav class="navbar barraNavbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Yesica Gonzalez</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explora</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <a href="mailto:yesicagonzalezv99@gmail.com?subject=Contacto&body=Hola, quiero información"
+            class="btn btn-primary">
+            Contáctame
+          </a>
+          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="social-link">
+            LinkedIn
+          </a>
+          <a href="ruta/tu-cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">Conoce mi CV</a>
+        </div>
+      </div>
+    </div>
   </nav>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-crossorigin="anonymous"></script>
+
+  <main>
+
+    <section class="inicioPBanner">
+      <div class="banner">
+        <div id="burbujas-container"></div>
+        <div class="contenido">
+          <h1>Yesica Gonzalez</h1>
+          <h3> Desarrolladora Full Stack | Java&JavaScript</h3>
+          <p>Creando codigo e innovando soluciones, impulsada por la creatividad.</p>
+          <a href="ruta/tu-cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">Descargar mi CV aqui</a>
+          <a class="nav-link" href="#">Descubre mis proyectos</a>
+
+
+          <!-- <div class="scroll-indicador">
+            <div class="mouse"></div>
+            <p>Desliza</p>
+          </div> -->
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="misProyectos">
+      <h1 class="text-center tituloProyecto">Mis proyectos</h1>
+
+      <div class="container carrusel">
+        <div class="slide">
+
+          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+            <div class="contenidoCarrusel">
+              <div class="nombre">Proyecto1</div>
+              <div class="descripcion">que es el proyec</div>
+              <div class="botonesLinks">
+                <a href="" target="_blank">github repo</a>
+                <a href="" target="_blank">live demo</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="elementos"
+            style="background-image: url('https://images.unsplash.com/photo-1772443320516-59e5f901302d?q=80&w=669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="contenidoCarrusel">
+              <div class="nombre">Proyecto2</div>
+              <div class="descripcion">que es el proyec</div>
+              <a href="" target="_blank">github repo</a>
+              <a href="" target="_blank">live demo</a>
+            </div>
+          </div>
+
+
+          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+            <div class="contenidoCarrusel">
+              <div class="nombre">Proyecto3</div>
+              <div class="descripcion">que es el proyec</div>
+              <a href="" target="_blank">github repo</a>
+              <a href="" target="_blank">live demo</a>
+            </div>
+          </div>
+
+          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+            <div class="contenidoCarrusel">
+              <div class="nombre">Proyecto4</div>
+              <div class="descripcion">que es el proyec</div>
+              <a href="" target="_blank">github repo</a>
+              <a href="" target="_blank">live demo</a>
+            </div>
+          </div>
+
+          <div class="button siguienteAtras">
+            <button class="siguiente"></button>
+            <button class="atras"></button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="misHabilidades">
+      <div class="seccion-habilidades container my-5">
+        <h2 class="text-center mb-5 titulo-seccion">Habilidades</h2>
+
+        <div class="row justify-content-center gy-4">
+          <div class="col-lg-5 ms-lg-4">
+            <div class="habilidades-card h-100">
+              <h3 class="skill-type-title text-center">
+                <i class="fa-solid fa-code"></i> Habilidades técnicas
+              </h3>
+
+              <div class="grid-tecnico">
+                <div class="skill-item">
+                  <i class="fa-brands fa-js"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-brands fa-java"></i>
+                  <span>Java</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-solid fa-database"></i>
+                  <span>SQL</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-brands fa-bootstrap"></i>
+                  <span>Bootstrap</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-solid fa-leaf"></i>
+                  <span>Spring Boot</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 ms-lg-4">
+            <div class="habilidades-card h-100">
+              <h3 class="skill-type-title text-center">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Habilidades Blandas
+              </h3>
+              <p class="instruccion-cartas">Más allá del código, haz clic en las cartas para explorar mis fortalezas</p>
+
+              <div class="mazo-habilidades">
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-users"></i></div>
+                    <div class="carta-back"><span>Trabajo en equipo</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="carta-back"><span>Resolución de problemas</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-brain"></i></div>
+                    <div class="carta-back"><span>Pensamiento Crítico y Curiosidad</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="carta-back"><span>Gestión del Tiempo</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <div class="carta-back"><span>Adaptabilidad</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="carta-back"><span>Resiliencia</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="carta-back"><span>Empatía</span></div>
+                  </div>
+                </div>
+                <div class="carta-habilidad" onclick="voltearCarta(this)">
+                  <div class="carta-inner">
+                    <div class="carta-front"><i class="fa-solid fa-comments"></i></div>
+                    <div class="carta-back"><span>Comunicación Asertiva</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Yesica Gonzalez Vargas - DESARROLLADORA FULL STACK</p>
+      <div class="redesLinks">
+        <a href="" target="_blank">Git</a>
+        <a href="" target="_blank">Linkedin</a>
+        <a href="mailto:yesicagonzalezv99@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="js/inicio.js"></script>
 </body>
+
 </html>
