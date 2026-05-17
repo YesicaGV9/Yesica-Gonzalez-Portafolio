@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="./assets/img/familia.png" type="Image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,9 +39,23 @@
   </div>
 
 
+  <nav class="navbarGlass">
+
+    <ul>
+
+      <li><a href="#inicioPBanner">Inicio</a></li>
+      <li><a href="#misProyectos">Mis proyectos</a></li>
+      <li><a href="#misHabilidades">Habilidades</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#contactame">Contáctame</a></li>
+
+    </ul>
+
+  </nav>
 
 
-  <nav class="navbar barraNavbar">
+  <!-- <nav class="navbar barraNavbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Yesica Gonzalez</a>
 
@@ -77,36 +93,50 @@
             class="btn btn-primary">
             Contáctame
           </a>
-          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://github.com/YesicaGV9" target="_blank" rel="noopener noreferrer" class="social-link">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a href="https://www.linkedin.com/in/yesica-maria-gonzalez-vargas-analista/" target="_blank" rel="noopener noreferrer" class="social-link">
             LinkedIn
           </a>
           <a href="ruta/tu-cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">Conoce mi CV</a>
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 
   <main>
 
-    <section class="inicioPBanner">
+    <section class="inicioPBanner" id="inicioPBanner">
       <div class="banner">
         <div id="burbujas-container"></div>
         <div class="contenido">
+          <div class="fotoPerfil-container">
+            <img src="./assets/img/Yocaricatura.png" alt="Foto de perfil profesional de Yesica Gonzalez"
+              class="fotoPerfil">
+          </div>
           <h1>Yesica Gonzalez</h1>
           <h3> Desarrolladora Full Stack | Java&JavaScript</h3>
           <p>Creando codigo e innovando soluciones, impulsada por la creatividad.</p>
-          <a href="ruta/tu-cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">Descargar mi CV aqui</a>
-          <a class="nav-link" href="#">Descubre mis proyectos</a>
+          <div class="redes">
+            <a href="https://www.linkedin.com/in/yesica-maria-gonzalez-vargas-analista/" target="_blank"><i
+                class="devicon-linkedin-plain"></i>
+            </a>
+            <a href="https://github.com/YesicaGV9" target="_blank"><i class="devicon-github-original"></i>
+            </a>
+          </div> <br>
+          <a href="ruta/tu-cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">
+            Descargar mi CV aqui <i class="fa-solid fa-download" style="color: rgb(245, 241, 241);"></i></a>
+          <!-- <a class="nav-link descubreProyecto" href="#misProyectos"><i class="fa-regular fa-compass"></i></a> -->
 
-
-          <!-- <div class="scroll-indicador">
-            <div class="mouse"></div>
+          <!-- indicador de scroll visaul -->
+          <div class="scroll-indicador">
+            <div class="mouse">
+              <div class="rueda"></div>
+            </div>
             <p>Desliza</p>
-          </div> -->
+          </div>
 
 
         </div>
@@ -115,41 +145,76 @@
 
 
 
-    <section class="misProyectos">
+    <section class="misProyectos" id="misProyectos">
       <h1 class="text-center tituloProyecto">Mis proyectos</h1>
 
       <div class="container carrusel">
         <div class="slide">
 
-          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+          <div class="elementos" style="background-image: url(./assets/img/AureaEsmeralda.png);">
             <div class="contenidoCarrusel">
-              <div class="nombre">Proyecto1</div>
-              <div class="descripcion">que es el proyec</div>
+              <div class="nombre">Aurea Esmeralda – E-commerce de Joyería de Lujo</div>
+              <div class="descripcion">Desarrollo de una plataforma e-commerce premium dedicada a la venta de
+                joyería fina de oro y esmeraldas colombianas. El objetivo principal del proyecto fue fusionar un diseño
+                visual minimalista y sofisticado que transmite la exclusividad y confianza de una marca de alta gama,
+                con una arquitectura de software sólida y eficiente.</div>
+              <div class="tecnologias">
+                <span class="tech-badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                <span class="tech-badge"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                <span class="tech-badge"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                <span class="tech-badge"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</span>
+                <span class="tech-badge"><i class="devicon-java-plain colored"></i>Java</span>
+                <span class="tech-badge"><i class="devicon-spring-original colored"></i>SpringBoot</span>
+                <span class="tech-badge"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+              </div>
               <div class="botonesLinks">
-                <a href="" target="_blank">github repo</a>
-                <a href="" target="_blank">live demo</a>
+                <a href="https://github.com/jcqj/GenCol_G10-AureaEsmeralda.git" target="_blank"><i
+                    class="devicon-github-original"></i> Repositorio</a>
+                <!-- <a href="" target="_blank">live demo</a> -->
               </div>
             </div>
           </div>
 
 
-          <div class="elementos"
-            style="background-image: url('https://images.unsplash.com/photo-1772443320516-59e5f901302d?q=80&w=669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="elementos" style="background-image: url(./assets/img/Explorador\ Espacial-Nasa.png);">
             <div class="contenidoCarrusel">
-              <div class="nombre">Proyecto2</div>
-              <div class="descripcion">que es el proyec</div>
-              <a href="" target="_blank">github repo</a>
-              <a href="" target="_blank">live demo</a>
+              <div class="nombre">NASA API Explorer – Buscador Astronómico</div>
+              <div class="descripcion">Desarrollo de una aplicación web interactiva que se conecta en tiempo
+                real con la API oficial de la NASA (APOD). Consumo asíncrono de la API de la NASA para renderizar
+                dinámicamente la "Imagen Astronómica del Día", junto con su título, fecha y la explicación científica
+                detallada proporcionada por astrofísicos. El objetivo principal del proyecto fue crear una interfaz
+                inmersiva y dinámica que permitiera explorar el archivo histórico de la agencia espacial mediante
+                consultas cronológicas.</div>
+              <div class="tecnologias">
+                <span class="tech-badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                <span class="tech-badge"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                <span class="tech-badge"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                <span class="tech-badge"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</span>
+              </div>
+              <a href="https://github.com/YesicaGV9/LAB-Using-NPM-End-of-module-Assessments/tree/main"
+                target="_blank"><i class="devicon-github-original"></i> Repositorio</a>
+              <!-- <a href="" target="_blank">live demo</a> -->
             </div>
           </div>
 
 
-          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+          <div class="elementos" style="background-image: url(./assets/img/JOYYmarketing.png);">
             <div class="contenidoCarrusel">
-              <div class="nombre">Proyecto3</div>
-              <div class="descripcion">que es el proyec</div>
-              <a href="" target="_blank">github repo</a>
-              <a href="" target="_blank">live demo</a>
+              <div class="nombre">Joyy Marketing – Sistema de Gestión y Analítica de Datos</div>
+              <div class="descripcion">Desarrollo e implementación de una solución integral de datos para centralizar la
+                información operativa y estratégica de una agencia de marketing. El proyecto consistió en diseñar una
+                arquitectura de base de datos relacional robusta desde cero, automatizar el procesamiento de la
+                información y crear tableros analíticos para evaluar la rentabilidad de las campañas en tiempo real.
+              </div>
+              <div class="tecnologias">
+                <span class="tech-badge"><i class="devicon-mysql-original colored"></i>MySQL</span>
+                <span class="tech-badge"><i class="devicon-python-plain colored"></i>Python</span>
+                <span class="tech-badge"><i class="fa-solid fa-chart-column" style="color: #f2c811;"></i>PowerBI</span>
+                <span class="tech-badge"><i class="devicon-git-plain colored"></i>Git</span>
+              </div>
+              <a href="https://github.com/YesicaGV9/JOYY-MARKETING.git" target="_blank"><i
+                  class="devicon-github-original"></i> Repositorio</a>
+              <!-- <a href="" target="_blank">live demo</a> -->
             </div>
           </div>
 
@@ -163,8 +228,15 @@
           </div>
 
           <div class="button siguienteAtras">
-            <button class="siguiente"></button>
-            <button class="atras"></button>
+
+            <button class="atras">
+              <i class="fa-solid fa-chevron-left" style="color: rgb(139, 45, 244);"></i>
+            </button>
+
+            <button class="siguiente">
+              <i class="fa-solid fa-chevron-right" style="color: rgb(139, 45, 244);"></i>
+            </button>
+
           </div>
 
         </div>
@@ -172,9 +244,9 @@
     </section>
 
 
-    <section class="misHabilidades">
+    <section class="misHabilidades" id="misHabilidades">
       <div class="seccion-habilidades container my-5">
-        <h2 class="text-center mb-5 titulo-seccion">Habilidades</h2>
+        <h2 class="text-center tituloHabilidades">Habilidades</h2>
 
         <div class="row justify-content-center gy-4">
           <div class="col-lg-5 ms-lg-4">
@@ -185,28 +257,40 @@
 
               <div class="grid-tecnico">
                 <div class="skill-item">
-                  <i class="fa-brands fa-js"></i>
+                  <i class="devicon-python-plain colored"></i>
+                  <span>Python</span>
+                </div>
+                <div class="skill-item">
+                  <i class="devicon-javascript-plain colored"></i>
                   <span>JavaScript</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fa-brands fa-java"></i>
+                  <i class="devicon-java-plain colored"></i>
                   <span>Java</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fa-solid fa-database"></i>
-                  <span>SQL</span>
+                  <i class="devicon-mysql-original colored"></i>
+                  <span>MySQL</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fa-brands fa-bootstrap"></i>
+                  <i class="devicon-postgresql-plain colored"></i>
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item">
+                  <i class="devicon-bootstrap-plain colored"></i>
                   <span>Bootstrap</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fa-solid fa-leaf"></i>
+                  <i class="devicon-spring-original colored"></i>
                   <span>Spring Boot</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fa-brands fa-github"></i>
-                  <span>Git & GitHub</span>
+                  <i class="devicon-git-plain colored"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill-item">
+                  <i class="devicon-github-original"></i>
+                  <span>GitHub</span>
                 </div>
               </div>
             </div>
@@ -275,17 +359,229 @@
 
     </section>
 
+    <!-- Sección Sobre Mí -->
+    <section class="sobreMi" id="sobre-mi">
+      <div class="container my-5">
+        <h2 class="text-center titulo-seccion mb-5">Sobre Mí</h2>
 
+        <div class="row align-items-center">
+          <!-- Columna 1: Foto Caricaturesca -->
+          <div class="col-md-5 text-center mb-4 mb-md-0">
+            <div class="foto-caricatura-container">
+              <img src="./assets/img/Yocaricatura.png" alt="Foto estilo caricatura de Yesica Gonzalez"
+                class="foto-caricatura">
+              <div class="decoracion-flotante"></div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Texto Descriptivo -->
+          <div class="col-md-7">
+            <div class="texto-sobre-mi">
+              <p class="parrafo-intro">
+                ¡Hola! Soy <span class="highlight">Yesica Gonzalez</span>, una desarrolladora Full Stack Junior
+                apasionada por crear soluciones innovadoras y funcionales.
+              </p>
+
+              <p class="parrafo-contenido">
+                Mi viaje en el desarrollo de software ha sido impulsado por la <span
+                  class="highlight">creatividad</span> y una genuina curiosidad por entender cómo funcionan las cosas. A
+                través de bootcamps intensivos y aprendizaje autónomo, he adquirido habilidades en Java y JavaScript,
+                siempre buscando aplicarlas de formas innovadoras.
+              </p>
+
+              <p class="parrafo-contenido">
+                Soy <span class="highlight">resiliente</span> y <span class="highlight">comprometida</span> con mi
+                crecimiento profesional. Cada desafío es una oportunidad para aprender, y cada proyecto es una ocasión
+                para demostrar que el trabajo arduo y la dedicación abren puertas. Mi formación intensiva me ha enseñado
+                a adaptarme rápidamente, resolver problemas complejos y trabajar efectivamente en equipo.
+              </p>
+
+              <p class="parrafo-final">
+                Busco contribuir a proyectos significativos donde pueda seguir creciendo como desarrolladora, mientras
+                aporto mis conocimientos técnicos y mi enfoque innovador. Me encanta la idea de crear código limpio,
+                mantenible y que realmente marque la diferencia.
+              </p>
+
+              <div class="valores-container">
+                <div class="valor">
+                  <i class="fas fa-lightbulb"></i>
+                  <span>Creativa</span>
+                </div>
+                <div class="valor">
+                  <i class="fas fa-heart"></i>
+                  <span>Comprometida</span>
+                </div>
+                <div class="valor">
+                  <i class="fas fa-mountain"></i>
+                  <span>Resiliente</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Educación y Experiencia -->
+    <section class="educacionExperiencia" id="formacion">
+      <div class="container my-5">
+        <h2 class="text-center titulo-seccion mb-5">Educación y Experiencia</h2>
+
+        <div class="timeline-container">
+
+          <!-- EDUCACIÓN -->
+          <div class="section-group">
+            <h3 class="categoria-titulo"><i class="fas fa-graduation-cap"></i> Educación</h3>
+
+            <div class="timeline-item educacion-item">
+              <div class="timeline-marker">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Bootcamp Full Stack Java</h4>
+                  <span class="timeline-institution">Generation</span>
+                </div>
+                <p class="timeline-duration"><i class="fas fa-calendar"></i> 3 meses de formación intensiva</p>
+                <p class="timeline-description">
+                  Formación intensiva en desarrollo Full Stack con enfoque en Java, JavaScript, Spring Boot, bases de
+                  datos con PostgreSQL y metodologías ágiles.
+                  Desarrollo de proyectos aplicados con tecnologías empresariales.
+                </p>
+                <div class="skills-learned">
+                  <span class="skill-badge">Java</span>
+                  <span class="skill-badge">Spring Boot</span>
+                  <span class="skill-badge">PostgreSQL</span>
+                  <span class="skill-badge">JavaScript</span>
+                  <span class="skill-badge">Bootstrap</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item educacion-item">
+              <div class="timeline-marker">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Bootcamp en Análisis de Datos</h4>
+                  <span class="timeline-institution">Betek</span>
+                </div>
+                <p class="timeline-duration"><i class="fas fa-calendar"></i> 3 meses de formación intensiva</p>
+                <p class="timeline-description">
+                  Formación especializada en análisis de datos, visualización de información, herramientas de BI y
+                  gestión de bases de datos.
+                  Proyectos prácticos con datos reales para extracción de insights.
+                </p>
+                <div class="skills-learned">
+                  <span class="skill-badge">SQL</span>
+                  <span class="skill-badge">Excel</span>
+                  <span class="skill-badge">Power BI</span>
+                  <span class="skill-badge">Análisis de datos</span>
+                  <span class="skill-badge">Visualización</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXPERIENCIA -->
+          <div class="section-group">
+            <h3 class="categoria-titulo"><i class="fas fa-briefcase"></i> Experiencia</h3>
+
+            <div class="timeline-item experiencia-item">
+              <div class="timeline-marker">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Desarrolladora Full Stack Junior - Generation</h4>
+                  <span class="timeline-institution">Generation</span>
+                </div>
+                <p class="timeline-duration"><i class="fas fa-calendar"></i> 3 meses (Bootcamp Full Stack Java)</p>
+                <p class="timeline-description">
+                  Participé en el desarrollo de múltiples proyectos en equipo, aplicando principios de Scrum y
+                  metodologías ágiles.
+                  Adquirí experiencia en el ciclo completo de desarrollo: desde diseño hasta deployment.
+                </p>
+                <div class="logros-experiencia">
+                  <div class="logro">✓ Desarrollo de APIs REST con Spring Boot</div>
+                  <div class="logro">✓ Frontend responsivo con JavaScript y Bootstrap</div>
+                  <div class="logro">✓ Gestión de bases de datos PostgreSQL</div>
+                  <div class="logro">✓ Trabajo colaborativo con Git y GitHub</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item experiencia-item">
+              <div class="timeline-marker">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Analista de Datos Junior - Betek</h4>
+                  <span class="timeline-institution">Betek</span>
+                </div>
+                <p class="timeline-duration"><i class="fas fa-calendar"></i> 3 meses (Bootcamp Análisis de Datos)</p>
+                <p class="timeline-description">
+                  Trabajé en proyectos de análisis e interpretación de datos, creando dashboards y reportes que
+                  facilitaban la toma de decisiones.
+                  Desarrollé habilidades en herramientas de BI y SQL avanzado.
+                </p>
+                <div class="logros-experiencia">
+                  <div class="logro">✓ Creación de dashboards en Power BI</div>
+                  <div class="logro">✓ Análisis exploratorio de datos</div>
+                  <div class="logro">✓ Queries SQL complejas para extracción de datos</div>
+                  <div class="logro">✓ Presentación de insights a stakeholders</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="contactame" id="contactame">
+
+      <h2>Contáctame</h2>
+      <p>¿Tienes un proyecto o idea? Escríbeme 💬</p>
+
+      <form id="form-contacto" action="https://formspree.io/f/xykvgnyr" method="POST">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" rows="5" required></textarea>
+
+        <button type="submit">
+          Enviar
+        </button>
+
+      </form>
+
+      <div id="modal-exito" class="modal-backdrop">
+        <div class="modal-card">
+          <h3>¡Mensaje Enviado!</h3>
+          <p>Gracias por escribirme. Te responderé lo antes posible.</p>
+          <button type="button" id="btn-cerrar-modal">Entendido</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contactoRapido">
+      <a class="whatsapp-float" id="whatsappLink" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </section>
 
 
   </main>
-
-
-
-
-
-
-
 
 
 
@@ -293,9 +589,11 @@
     <div class="footer-content">
       <p>&copy; 2026 Yesica Gonzalez Vargas - DESARROLLADORA FULL STACK</p>
       <div class="redesLinks">
-        <a href="" target="_blank">Git</a>
-        <a href="" target="_blank">Linkedin</a>
-        <a href="mailto:yesicagonzalezv99@gmail.com">Email</a>
+        <a href="https://github.com/YesicaGV9" target="_blank"><i class="devicon-github-original"></i></a>
+        <a href="https://www.linkedin.com/in/yesica-maria-gonzalez-vargas-analista/" target="_blank"><i
+            class="devicon-linkedin-plain"></i></a>
+        <a href="mailto:yesicagonzalezv99@gmail.com" target="_blank"><i class="fa-regular fa-envelope"
+            style="color: rgb(240, 243, 248);"></i></a>
       </div>
     </div>
   </footer>

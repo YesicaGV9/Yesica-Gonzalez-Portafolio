@@ -4,11 +4,9 @@
     /* box-sizing: border-box; */
 }
 
-html {
-    scroll-snap-type: y mandatory;
+/* html {
     scroll-behavior: smooth;
-
-}
+} */
 
 body {
     background-color: #0a0b10;
@@ -21,6 +19,10 @@ main {
     /*  empuja el footer al final*/
 }
 
+section {
+    scroll-margin-top: 120px;
+}
+
 
 /* animacion de bienvenida al entrar a la pagina*/
 
@@ -31,6 +33,11 @@ main {
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    transition: opacity .8s ease, visibility .8s ease;
 }
 
 
@@ -101,6 +108,7 @@ main {
 .hidden {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 
 
@@ -109,7 +117,7 @@ main {
 /* Navegacion */
 /* contenedor del offcanvas */
 
-.barraNavbar {
+/* .barraNavbar {
     background: #161925;
 }
 
@@ -128,17 +136,98 @@ main {
 }
 
 /* estando abierto */
-.offcanvas.show {
+/* .offcanvas.show {
     transform: translateY(-90%) scale(1) !important;
 }
 
 .offcanvas {
     box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
+}  */
+
+/* 
+barra de navegacion o navbar
+========================================= */
+
+.navbarGlass {
+    position: fixed;
+    /* queda encima del banner */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: fit-content;
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50px;
+
+    /* vidrio transparente */
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, .1);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+
+    z-index: 999;
+}
+
+
+.navbarGlass ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+    gap: 20px;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbarGlass ul li {
+    display: flex;
+}
+
+.navbarGlass ul li a {
+    display: block;
+    padding: 12px 28px;
+
+    text-decoration: none;
+    color: white;
+
+    border-radius: 40px;
+
+    transition: .4s;
+}
+
+.navbarGlass ul li a:hover {
+    background: rgba(52, 35, 71, 0.308);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(165, 98, 241, 0.479);
+}
+
+
+
+
+.activo {
+    background: rgba(230, 148, 238, 0.356);
+    box-shadow: 0 0 20px rgba(113, 7, 134, 0.582);
 }
 
 
 /* 
-banner principal - cabeza de pagina */
+banner principal - cabeza de pagina 
+==================================================================================*/
 
 .inicioPBanner {
     display: flex;
@@ -171,6 +260,45 @@ banner principal - cabeza de pagina */
     /* Cambia #000 por el color de fondo de tu sección de proyectos */
 }
 
+/* foto mia de perfil para banner */
+
+.fotoPerfil-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    position: relative;
+    animation: floatProfile 3s ease-in-out infinite;
+}
+
+.fotoPerfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(230, 168, 255);
+    box-shadow:
+        0 0 40px rgb(230, 168, 255),
+        inset 0 0 20px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 3;
+}
+
+@keyframes floatProfile {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 
+contenido del banner- titulos - enlaces
+==================================================== */
 
 .contenido {
     position: relative;
@@ -189,8 +317,8 @@ banner principal - cabeza de pagina */
 
 .contenido h3 {
     font-size: 1.5rem;
-    color: #d4af37;
-    /* a cambiar el color del subtitulo */
+    color: rgb(230, 168, 255);
+
     margin-bottom: 1.5rem;
 }
 
@@ -202,8 +330,90 @@ banner principal - cabeza de pagina */
     margin: 0 auto;
 }
 
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-/* burbujas efecto en banner*/
+.redes a {
+    color: white;
+}
+
+.redes i {
+    font-size: 1.5rem;
+}
+
+.redes a:hover {
+    color: #8b2df4;
+}
+
+.btn-cv {
+    color: #8b2df4;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+/* indicador de scroll mouse efecto
+=========================================================== */
+
+.scroll-indicador {
+    position: absolute;
+    bottom: -10px;
+    /* distancia desde abajo */
+    right: 20px;
+    /* distancia desde la derecha */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.rueda {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8px;
+
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        top: 8px;
+    }
+
+    100% {
+        opacity: 0;
+        top: 28px;
+    }
+}
+
+.scroll-indicador p {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+/* burbujas efecto en banner
+=================================================================*/
 #burbujas-container {
     position: absolute;
     inset: 0;
@@ -244,12 +454,29 @@ banner principal - cabeza de pagina */
 }
 
 
-/* transicion entre secciones  */
+/* transicion entre secciones / fondo  */
+
+.misProyectos,
+.misHabilidades {
+    background: radial-gradient(circle,
+            rgba(67, 9, 100, 0.76) 0%,
+            transparent 70%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SECCION MIS PROYECTOS GEneral . varias subdivisiones */
+
+/* Carrusel - seccion de proyectos 
+=================================================== */
 
 
-
-/* Carrusel - seccion de proyectos  */
-
+.tituloProyecto {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
 
 .carrusel {
     position: relative;
@@ -265,16 +492,16 @@ banner principal - cabeza de pagina */
     position: absolute;
     top: 50%;
 
-    left: -450px; 
+    left: -450px;
     transform: translateY(-50%);
-    
+
     width: 400px;
     padding: 40px;
     color: #fff;
     border-radius: 25px;
-    
+
     /* efecto vidrio */
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -285,7 +512,7 @@ banner principal - cabeza de pagina */
 .contenidoCarrusel .nombre {
     font-size: 35px;
     font-weight: bold;
-    color: #8b2df4; 
+    color: #8b2df4;
     margin-bottom: 15px;
 }
 
@@ -304,7 +531,7 @@ banner principal - cabeza de pagina */
     text-decoration: none;
     border-radius: 8px;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
@@ -316,12 +543,13 @@ banner principal - cabeza de pagina */
 
 
 
-/* botones de siguiente y atras */
+/* botones de siguiente y atras 
+====================================================*/
 
 .siguienteAtras {
     position: absolute;
     bottom: 30px;
-    right: 50px; 
+    right: 50px;
     width: auto;
     display: flex;
     gap: 15px;
@@ -331,16 +559,20 @@ banner principal - cabeza de pagina */
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.1);
+    border: 1px solid #8b2df4;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
+.siguienteAtras i {
+    font-size: 1.5rem;
+}
+
 .siguienteAtras button:hover {
-    background: #8b2df4;
+    background: rgba(113, 7, 134, 0.582);
 }
 
 
@@ -424,14 +656,26 @@ banner principal - cabeza de pagina */
 
 
 
-/* seccion de habilidades  */
+/* seccion de habilidades 
+================================================================= */
 
+.tituloHabilidades {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    top: -60px;
+}
+
+.seccion-habilidades {
+    color: white;
+}
 
 /* Tecnicas */
 
 .habilidades-card {
-    background: rgba(10, 15, 25, 0.4); 
-    backdrop-filter: blur(12px); 
+    background: rgba(10, 15, 25, 0.4);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     padding: 40px 30px;
@@ -440,10 +684,8 @@ banner principal - cabeza de pagina */
 }
 
 .habilidades-card:hover {
-    border: 1px solid rgba(139, 45, 244, 0.4);
+    border-color: rgba(180, 160, 255, 0.6);
 }
-
-
 
 
 .grid-tecnico {
@@ -467,21 +709,24 @@ banner principal - cabeza de pagina */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05); /* Cuadrado oscuro suave */
+    background: rgba(255, 255, 255, 0.05);
+    /* Cuadrado oscuro suave */
     border-radius: 15px;
     font-size: 30px;
-    color: #a1a1a1; /* Gris por defecto */
+    color: #a1a1a1;
+    /* Gris por defecto */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid transparent;
 }
 
 /* EFECTO HOVER PARA CADA ICONO */
 .skill-item:hover i {
-    color: #8b2df4; /* Cambia a tu morado */
+    color: #8b2df4;
     background: rgba(139, 45, 244, 0.1);
     border: 1px solid rgba(139, 45, 244, 0.5);
-    transform: translateY(-8px) scale(1.1); /* Sube un poco y crece */
-    box-shadow: 0 10px 20px rgba(139, 45, 244, 0.2); /* Brillo debajo */
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(139, 45, 244, 0.2);
+    /* Brillo debajo */
 }
 
 .skill-item span {
@@ -492,10 +737,9 @@ banner principal - cabeza de pagina */
 }
 
 .skill-item:hover span {
-    color: white; /* El texto se ilumina al pasar el mouse */
+    color: white;
+    /* El texto se ilumina al pasar el mouse */
 }
-
-
 
 
 
@@ -506,7 +750,7 @@ banner principal - cabeza de pagina */
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     justify-items: center;
-    perspective: 1000px; 
+    perspective: 1000px;
 }
 
 /* La base de la carta */
@@ -515,6 +759,17 @@ banner principal - cabeza de pagina */
     height: 130px;
     cursor: pointer;
     background: transparent;
+    transition: transform 0.3s ease;
+}
+
+.carta-habilidad:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.carta-habilidad:hover .carta-front {
+    border-color: rgba(139, 45, 244, 0.8);
+    background: rgba(139, 45, 244, 0.2);
+    color: rgb(230, 168, 255);
 }
 
 /* contenedor que gira */
@@ -533,11 +788,12 @@ banner principal - cabeza de pagina */
 }
 
 /* estilo compartido de las cartas */
-.carta-front, .carta-back {
+.carta-front,
+.carta-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; 
+    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -548,7 +804,7 @@ banner principal - cabeza de pagina */
 
 /* parte frontal de las cartas */
 .carta-front {
-    background: rgba(139, 45, 244, 0.1); 
+    background: rgba(139, 45, 244, 0.1);
     backdrop-filter: blur(5px);
     color: #8b2df4;
     font-size: 2rem;
@@ -556,9 +812,9 @@ banner principal - cabeza de pagina */
 
 /* parte de atras de las cartas */
 .carta-back {
-    background: #8b2df4; 
+    background: rgba(230, 148, 238, 0.356);
     color: white;
-    transform: rotateY(180deg); 
+    transform: rotateY(180deg);
     font-size: 14px;
     font-weight: 500;
 }
@@ -573,32 +829,732 @@ banner principal - cabeza de pagina */
 
 
 
+/*
+   Seccion sobre mi 
+   ======================================== */
+
+.sobreMi {
+    background: linear-gradient(135deg, rgba(10, 11, 16, 0.8), rgba(30, 20, 50, 0.6));
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobreMi::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(67, 9, 100, 0.76) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBackground 15s ease-in-out infinite;
+}
+
+@keyframes floatBackground {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+    }
+}
+
+.sobreMi .titulo-seccion {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Foto caricatura */
+.foto-caricatura-container {
+    position: relative;
+    display: inline-block;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.foto-caricatura {
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 2px solid rgba(227, 168, 255, 0.5);
+    box-shadow:
+        0 10px 40px rgba(209, 168, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.foto-caricatura:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.decoracion-flotante {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(113, 7, 134, 0.582);
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateBorder 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Texto sobre mí */
+.texto-sobre-mi {
+    color: #e0e0e0;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.parrafo-intro {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.parrafo-contenido {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.parrafo-final {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #d0d0d0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.highlight {
+    color: #e6a8ff;
+    font-weight: 600;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #41055e, transparent);
+}
+
+/* Valores */
+.valores-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.valor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(180, 160, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(180, 160, 255, 0.3);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+}
+
+.valor:hover {
+    background: rgba(180, 160, 255, 0.2);
+    transform: translateY(-5px);
+    border-color: rgba(180, 160, 255, 0.6);
+}
+
+.valor i {
+    font-size: 2rem;
+    color: #b4a0ff;
+}
+
+.valor span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #FFFFFF;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+   Seccion educacion y experiencia
+   ======================================== */
+
+.educacionExperiencia {
+    background: linear-gradient(135deg, rgba(10, 11, 16, 0.9), rgba(50, 30, 70, 0.4));
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.educacionExperiencia::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(180, 160, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBackgroundAlt 20s ease-in-out infinite;
+}
+
+@keyframes floatBackgroundAlt {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-40px, 40px);
+    }
+}
+
+.educacionExperiencia .titulo-seccion {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-group {
+    margin-bottom: 60px;
+}
+
+.categoria-titulo {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(180, 160, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.categoria-titulo i {
+    color: #b4a0ff;
+    font-size: 1.8rem;
+}
+
+/* Timeline items */
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(180, 160, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(180, 160, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #b4a0ff, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-item:hover {
+    border-color: rgba(180, 160, 255, 0.6);
+    background: rgba(180, 160, 255, 0.12);
+    transform: translateX(10px);
+}
+
+.timeline-item:hover::before {
+    opacity: 1;
+}
+
+.timeline-marker {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(180, 160, 255, 0.2), rgba(180, 160, 255, 0.1));
+    border: 2px solid rgba(180, 160, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #b4a0ff;
+    flex-shrink: 0;
+}
+
+.educacion-item .timeline-marker {
+    background: linear-gradient(135deg, rgba(180, 160, 255, 0.2), rgba(180, 160, 255, 0.1));
+}
+
+.experiencia-item .timeline-marker {
+    background: linear-gradient(135deg, rgba(180, 160, 255, 0.2), rgba(180, 160, 255, 0.1));
+    border-color: rgba(180, 160, 255, 0.4);
+}
+
+.experiencia-item .timeline-marker {
+    color: rgb(127, 8, 151);
+}
+
+.timeline-content {
+    flex: 1;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.timeline-header {
+    margin-bottom: 15px;
+}
+
+.timeline-title {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.timeline-institution,
+.timeline-role {
+    display: inline-block;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: rgba(180, 160, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.timeline-duration {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+}
+
+.timeline-description {
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    opacity: 0.9;
+}
+
+.skills-learned,
+.logros-experiencia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: rgba(180, 160, 255, 0.15);
+    border: 1px solid rgba(180, 160, 255, 0.4);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    background: rgba(180, 160, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.logro {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 0;
+    opacity: 0.9;
+}
+
+.logro::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #b4a0ff;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .foto-caricatura {
+        width: 250px;
+        height: 250px;
+    }
+
+    .decoracion-flotante {
+        width: 300px;
+        height: 300px;
+    }
+
+    .valores-container {
+        gap: 15px;
+    }
+
+    .valor {
+        min-width: 100px;
+        padding: 15px;
+    }
+
+    .sobreMi .titulo-seccion,
+    .educacionExperiencia .titulo-seccion {
+        font-size: 2rem;
+    }
+}
 
 
+/* 
+   BADGES DE TECNOLOGÍA EN PROYECTOS
+   ======================================== */
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(180, 160, 255, 0.15);
+    border: 1px solid rgba(180, 160, 255, 0.4);
+    color: #FFFFFF;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(180, 160, 255, 0.25);
+    border-color: rgba(180, 160, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.tech-badge i {
+    font-size: 0.9rem;
+}
 
 
+/* SECCION PARA FORMULARIO DE CONTACTO
+=========================================================================== */
 
 
+.contactame {
+    background: linear-gradient(135deg, rgba(10, 11, 16, 0.8), rgba(30, 20, 50, 0.6));
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contactame::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(67, 9, 100, 0.76) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.contactame h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contactame p {
+    margin-bottom: 40px;
+    color: #cbd5e1;
+}
+
+/* 
+FORMULARIO */
+.contactame form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
 
 
+.contactame label {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+/* INPUTS */
+.contactame input,
+.contactame textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contactame input:focus,
+.contactame textarea:focus {
+    border-color: #75219c;
+    box-shadow: 0 0 8px rgba(113, 7, 134, 0.582);
+}
+
+.contactame input:-webkit-autofill,
+.contactame input:-webkit-autofill:hover, 
+.contactame input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 0px 1000px #15161e inset !important; /* Cubre el fondo blanco usando una sombra interna */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* BOTÓN */
+.contactame button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #8b2df4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contactame button:hover {
+    background: rgba(113, 7, 134, 0.582);
+    transform: translateY(-2px);
+}
 
 
+/* modal para el formulario - aviso de envio */
+
+/* fondo oscuro que cubre toda la pantalla */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(8px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* activa el JavaScript para mostrar el modal */
+.modal-backdrop.mostrar-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Tarjeta del mensaje dentro del modal */
+.modal-card {
+    background: #120e24; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.modal-card h3 {
+    font-size: 1.8rem;
+    color: #8b2df4;
+    margin-bottom: 12px;
+}
+
+.modal-card p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Botón de cierre del modal */
+#btn-cerrar-modal {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #8b2df4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-cerrar-modal:hover {
+    background: rgba(113, 7, 134, 0.582);
+}
 
 
+/* ================================================================================
+Mensaje de ws / contacto rapido */
 
+.contactoRapido {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
 
+.whatsapp-float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 60px;
+  height: 60px;
 
+  background-color: #25D366; /* verde WhatsApp */
+  color: white;
 
+  border-radius: 50%;
+  text-decoration: none;
 
+  font-size: 28px;
 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 
+  transition: all 0.3s ease;
+}
 
+/* efecto hover */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
 
-
-
-
-/* footer final de la pagina */
+/* footer final de la pagina
+=================================================== */
 
 .custom-footer {
     background-color: #161925;
@@ -628,8 +1584,11 @@ banner principal - cabeza de pagina */
     margin: 0 15px;
 }
 
-/* Efecto hover con el dorado de tu subtítulo */
 .redesLinks a:hover {
     color: #8b2df4;
-    transform: translateY(-3px);
+    transform: translateY(3px);
+}
+
+.redesLinks i:hover {
+    color: #8b2df4;
 }
