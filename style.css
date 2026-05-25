@@ -144,8 +144,7 @@ section {
     box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
 }  */
 
-/* 
-barra de navegacion o navbar
+/* barra de navegacion o navbar
 ========================================= */
 
 .navbarGlass {
@@ -154,76 +153,151 @@ barra de navegacion o navbar
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
+ 
     width: fit-content;
     padding: 10px 20px;
-
+ 
     display: flex;
     justify-content: center;
     align-items: center;
-
+ 
     border-radius: 50px;
-
+ 
     /* vidrio transparente */
     background: rgba(255, 255, 255, 0.05);
-
+ 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
+ 
     border: 1px solid rgba(255, 255, 255, .1);
-
+ 
     box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
-
+ 
     z-index: 999;
 }
-
-
+ 
+ 
 .navbarGlass ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
+ 
     list-style: none;
     gap: 20px;
-
+ 
     padding: 0;
     margin: 0;
 }
-
-
+ 
+ 
 .navbarGlass ul li {
     display: flex;
 }
-
+ 
 .navbarGlass ul li a {
     display: block;
     padding: 12px 28px;
-
+ 
     text-decoration: none;
     color: white;
-
+ 
     border-radius: 40px;
-
+ 
     transition: .4s;
 }
-
+ 
 .navbarGlass ul li a:hover {
     background: rgba(52, 35, 71, 0.308);
-
+ 
     transform: translateY(-2px);
-
+ 
     box-shadow:
         0 0 20px rgba(165, 98, 241, 0.479);
 }
-
-
-
-
+ 
+ 
+ 
+ 
 .activo {
     background: rgba(230, 148, 238, 0.356);
     box-shadow: 0 0 20px rgba(113, 7, 134, 0.582);
 }
-
+ 
+/* ── Botón hamburguesa (oculto en desktop) ── */
+.menuToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+ 
+.menuToggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.35s ease;
+    transform-origin: center;
+}
+ 
+.menuToggle.abierto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menuToggle.abierto span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menuToggle.abierto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+/* ── Navbar responsive ── */
+@media (max-width: 900px) {
+    .navbarGlass {
+        top: 12px;
+        width: calc(100% - 32px);
+        max-width: 480px;
+        border-radius: 18px;
+        padding: 10px 16px;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+ 
+    .menuToggle {
+        display: flex;
+    }
+ 
+    .navbarGlass ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 4px;
+        padding: 8px 0 4px;
+        margin: 0;
+    }
+ 
+    .navbarGlass ul.nav-abierto {
+        display: flex;
+    }
+ 
+    .navbarGlass ul li {
+        width: 100%;
+        display: block;
+    }
+ 
+    .navbarGlass ul li a {
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        display: block;
+        width: 100%;
+    }
+}
 
 /* 
 banner principal - cabeza de pagina 
@@ -1591,4 +1665,109 @@ Mensaje de ws / contacto rapido */
 
 .redesLinks i:hover {
     color: #8b2df4;
+}
+
+/* ========================================================================= */
+/* Responsive */
+ 
+/* ── Tablet (≤ 1100px): ajuste del panel lateral ── */
+@media (max-width: 1100px) {
+    .slide .elementos:nth-child(2) .contenidoCarrusel {
+        left: 20px;
+        width: 300px;
+        padding: 24px 20px;
+    }
+    .contenidoCarrusel .nombre { font-size: 22px; }
+    .contenidoCarrusel .descripcion { font-size: 13px; }
+}
+ 
+/* ── Móviles (≤ 768px): carrusel vertical ── */
+@media (max-width: 768px) {
+ 
+    .contenido {
+        padding-top: 200px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .contenido h1 { font-size: 2rem; }
+    .contenido h3 { font-size: 1.1rem; }
+ 
+    /* Carrusel apilado */
+    .carrusel {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px 0 !important;
+        overflow: visible !important;
+        transform: none !important;
+    }
+ 
+    .slide {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+ 
+    /* Ocultar todos por defecto */
+    .carrusel .slide .elementos {
+        position: relative !important;
+        width: 100% !important;
+        height: 220px !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        border-radius: 16px 16px 0 0 !important;
+        display: none !important;
+        opacity: 1 !important;
+    }
+ 
+    /* Mostrar solo el 1ro (imagen) y el 2do (contenido activo) */
+    .slide .elementos:nth-child(1) {
+        display: block !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+    .slide .elementos:nth-child(2) {
+        display: block !important;
+        height: auto !important;
+        border-radius: 0 0 16px 16px !important;
+    }
+    .slide .elementos:nth-child(n + 3) {
+        display: none !important;
+    }
+ 
+    /* Panel descripción debajo de la imagen */
+    .slide .elementos:nth-child(2) .contenidoCarrusel {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        padding: 20px 16px !important;
+        border-radius: 0 0 16px 16px !important;
+        background: rgba(10, 5, 20, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        box-shadow: none !important;
+    }
+ 
+    .contenidoCarrusel .nombre { font-size: 18px; margin-bottom: 8px; }
+    .contenidoCarrusel .descripcion { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+ 
+    /* Botones centrados */
+    .siguienteAtras {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        justify-content: center;
+        padding: 16px 0 8px;
+    }
+ 
+    .tituloHabilidades { top: 0; }
+}
+ 
+/* ── Móviles pequeños (≤ 380px) ── */
+@media (max-width: 380px) {
+    .contenido h1 { font-size: 1.5rem; }
+    .fotoPerfil-container { width: 110px; height: 110px; }
+    .carta-habilidad { width: 80px; height: 105px; }
 }

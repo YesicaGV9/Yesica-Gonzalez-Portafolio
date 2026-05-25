@@ -95,19 +95,18 @@ window.addEventListener("DOMContentLoaded", () => {
 // carrusel de proyectos 
 
 
-let siguiente = document.querySelector('.siguiente');
-let atras = document.querySelector('.atras');
-
-siguiente.addEventListener('click', function(){
-    let elementos = document.querySelectorAll('.elementos');
-    document.querySelector('.slide').appendChild(elementos[0]);
+const slide = document.querySelector('.slide');
+ 
+document.querySelector('.siguiente').addEventListener('click', function () {
+    // Tomar SOLO los .elementos (excluye cualquier cosa fuera)
+    const elementos = slide.querySelectorAll('.elementos');
+    slide.appendChild(elementos[0]);
 });
-
-atras.addEventListener('click', function() {
-    let elementos = document.querySelectorAll('.elementos');
-    document.querySelector('.slide').prepend(elementos[elementos.length - 1]);
+ 
+document.querySelector('.atras').addEventListener('click', function () {
+    const elementos = slide.querySelectorAll('.elementos');
+    slide.prepend(elementos[elementos.length - 1]);
 });
-
 
 
 
@@ -177,3 +176,25 @@ const telefono = "573026734063";
 const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
 document.getElementById("whatsappLink").href = url;
+
+// ========================================================================================
+// menú hamburguesa responsive
+ 
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+ 
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('nav-abierto');
+        menuToggle.classList.toggle('abierto');
+    });
+ 
+    // Cerrar el menú al hacer clic en un enlace
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('nav-abierto');
+            menuToggle.classList.remove('abierto');
+        });
+    });
+}
+ 

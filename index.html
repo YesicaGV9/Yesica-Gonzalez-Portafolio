@@ -41,7 +41,13 @@
 
   <nav class="navbarGlass">
 
-    <ul>
+    <button class="menuToggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul id="navMenu">
 
       <li><a href="#inicioPBanner">Inicio</a></li>
       <li><a href="#misProyectos">Mis proyectos</a></li>
@@ -113,7 +119,7 @@
         <div id="burbujas-container"></div>
         <div class="contenido">
           <div class="fotoPerfil-container">
-            <img src="./assets/img/Yocaricatura.png" alt="Foto de perfil profesional de Yesica Gonzalez"
+            <img src="./assets/img/YoDos.jpeg" alt="Foto de perfil profesional de Yesica Gonzalez"
               class="fotoPerfil">
           </div>
           <h1>Yesica Gonzalez</h1>
@@ -218,28 +224,38 @@
             </div>
           </div>
 
-          <div class="elementos" style="background-image: url(./assets/img/moodboard\ portafolio.png);">
+          <div class="elementos" style="background-image: url(./assets/img/Pokeapi.png);">
             <div class="contenidoCarrusel">
-              <div class="nombre">Proyecto4</div>
-              <div class="descripcion">que es el proyec</div>
-              <a href="" target="_blank">github repo</a>
-              <a href="" target="_blank">live demo</a>
+              <div class="nombre">Pokémon Finder Explorer – Buscador y Gestor de Favoritos</div>
+              <div class="descripcion">Desarrollo de una aplicación web interactiva que integra la PokeAPI para permitir
+                la búsqueda dinámica de información y recursos visuales de Pokémon en tiempo real. La aplicación
+                implementa peticiones asíncronas para el consumo de la API, procesando y renderizando la información de
+                manera eficiente. Asimismo, incluye un sistema de gestión de favoritos mediante el uso de LocalStorage,
+                permitiendo persistir las selecciones del usuario incluso después de recargar el navegador. El objetivo
+                principal fue crear una herramienta intuitiva que combine la consulta de datos externos con una
+                experiencia de usuario personalizada mediante la persistencia de datos en el cliente.</div>
+              <div class="tecnologias">
+                <span class="tech-badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                <span class="tech-badge"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                <span class="tech-badge"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                <span class="tech-badge"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</span>
+              </div>
+              <a href="https://github.com/Malejandrapin/LAB_The_Web_Storage_APIs.git" target="_blank">Repositorio</a>
+              <!-- <a href="" target="_blank">live demo</a> -->
             </div>
           </div>
-
-          <div class="button siguienteAtras">
-
-            <button class="atras">
-              <i class="fa-solid fa-chevron-left" style="color: rgb(139, 45, 244);"></i>
-            </button>
-
-            <button class="siguiente">
-              <i class="fa-solid fa-chevron-right" style="color: rgb(139, 45, 244);"></i>
-            </button>
-
-          </div>
-
         </div>
+
+        <!-- Botones afuera del .slide para que el carrusel sea infinito -->
+        <div class="siguienteAtras">
+          <button class="atras" aria-label="Proyecto anterior">
+            <i class="fa-solid fa-chevron-left" style="color: rgb(139, 45, 244);"></i>
+          </button>
+          <button class="siguiente" aria-label="Proyecto siguiente">
+            <i class="fa-solid fa-chevron-right" style="color: rgb(139, 45, 244);"></i>
+          </button>
+        </div>
+
       </div>
     </section>
 
